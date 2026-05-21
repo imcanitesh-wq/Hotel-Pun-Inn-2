@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hotel Pun Inn Kathmandu — Your Home in the Heart of Bhotebahal</title>
+<meta name="description" content="Hotel Pun Inn, Bhotebahal Kathmandu — traditional Nepali hospitality meets modern comfort. Classic, Deluxe and Suite rooms. Book direct for the best rates."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+/* ══════════════════════════════════
+   TOKENS & RESET
+══════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:#FFFFFF;color:#0A0A0A;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+:root{
+  --white:#FFFFFF;
+  --off-white:#F8F7FF;
+  --purple:#7C3AED;
+  --purple2:#9F67FF;
+  --purple-soft:#EDE9FE;
+  --purple-mid:#C4B5FD;
+  --bg:#FFFFFF;
+  --bg2:#F8F7FF;
+  --bg3:#F3F0FF;
+  --bg4:#EDE9FE;
+  --text:#0A0A0A;
+  --text2:#4B5563;
+  --text3:#9CA3AF;
+  --border:rgba(0,0,0,.08);
+  --border2:rgba(124,58,237,.25);
+  --r8:8px;--r16:12px;--r24:16px;--rpill:100px;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --sh:0 4px 24px rgba(0,0,0,.07);
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* ══════════════════════════════════
+   NAV
+══════════════════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 60px;
+  transition:background .4s,padding .3s,box-shadow .3s;
+}
+nav.solid{
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(20px);
+  padding:10px 60px;
+  box-shadow:0 1px 0 var(--border);
+}
+.nav-logo{display:flex;align-items:center;gap:14px;flex-shrink:0;}
+.nav-logo img{height:52px;width:auto;border-radius:6px;}
+.nav-logo-text{display:flex;flex-direction:column;line-height:1.15;}
+.nav-logo-text span:first-child{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:600;color:var(--text);letter-spacing:.01em;}
+.nav-logo-text span:last-child{font-size:.65rem;font-weight:600;color:var(--text2);letter-spacing:.14em;text-transform:uppercase;}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+.nav-links a{
+  font-size:.9rem;font-weight:500;color:var(--text2);
+  padding:8px 16px;border-radius:var(--rpill);transition:color .18s,background .18s;
+}
+.nav-links a:hover{color:var(--text);background:rgba(0,0,0,.05)}
+.nav-contact-pill{
+  background:transparent;color:var(--text) !important;
+  padding:8px 20px !important;border-radius:var(--rpill) !important;
+  border:1.5px solid var(--border);
+  font-size:.875rem !important;font-weight:600 !important;
+  transition:all .2s !important;
+}
+.nav-contact-pill:hover{border-color:var(--purple) !important;color:var(--purple) !important;background:var(--purple-soft) !important;}
+.nav-cta{
+  background:var(--purple);color:#fff;
+  padding:10px 24px;border-radius:var(--rpill);
+  font-size:.875rem;font-weight:600;letter-spacing:.01em;
+  transition:background .2s,transform .2s var(--ease-spring);
+  white-space:nowrap;
+}
+.nav-cta:hover{background:var(--purple2);transform:translateY(-1px);box-shadow:0 4px 16px rgba(124,58,237,.3)}
+.nav-wa{
+  background:#25D366;color:#fff;
+  padding:10px 20px;border-radius:var(--rpill);
+  font-size:.875rem;font-weight:600;letter-spacing:.01em;
+  transition:background .2s,transform .2s var(--ease-spring);
+  white-space:nowrap;display:inline-flex;align-items:center;gap:7px;
+}
+.nav-wa:hover{background:#1ebe5d;transform:translateY(-1px);box-shadow:0 4px 16px rgba(37,211,102,.35)}
+.nav-actions{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.nav-hamburger span{width:22px;height:1.5px;background:var(--text);border-radius:2px;transition:all .3s;}
+/* Mobile nav drawer */
+.nav-mobile-open .nav-links{
+  display:flex;flex-direction:column;
+  position:fixed;top:0;left:0;right:0;bottom:0;
+  background:rgba(255,255,255,.98);backdrop-filter:blur(20px);
+  padding:100px 40px 40px;gap:8px;z-index:490;
+  animation:fadeUp .3s var(--ease-out) both;
+}
+.nav-mobile-open .nav-links a{font-size:1.4rem;font-weight:500;padding:14px 0;border-bottom:1px solid var(--border);}
+.nav-mobile-open .nav-hamburger span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.nav-mobile-open .nav-hamburger span:nth-child(2){opacity:0;}
+.nav-mobile-open .nav-hamburger span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+@media(max-width:1024px){.nav-hamburger{display:flex;}}
+
+/* ══════════════════════════════════
+   HERO — Option 3: Split layout
+   Left = white panel, dark text
+   Right = 9:16 portrait video box
+   Both columns equal height
+══════════════════════════════════ */
+.hero{
+  position:relative;width:100%;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:stretch;
+  overflow:hidden;
+  padding-top:70px;
+  background:#FFFFFF;
+  min-height:100vh;
+}
+/* Left panel */
+.hero-left-panel{
+  padding:72px 52px 72px 60px;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;z-index:2;
+}
+.hero-left-panel::before{
+  content:'';position:absolute;
+  bottom:-80px;left:-80px;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(124,58,237,.07) 0%,transparent 65%);
+  pointer-events:none;z-index:0;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--purple);margin-bottom:20px;position:relative;z-index:1;
+  animation:fadeUp .6s .2s var(--ease-out) both;
+}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--purple);}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.8rem,4vw,4.8rem);
+  font-weight:300;line-height:1.02;letter-spacing:-.02em;
+  color:var(--text);margin-bottom:22px;
+  position:relative;z-index:1;
+  animation:fadeUp .8s .3s var(--ease-out) both;
+}
+.hero h1 em{font-style:italic;color:var(--purple);}
+.hero-sub{
+  font-size:1rem;line-height:1.75;color:var(--text2);
+  max-width:400px;margin-bottom:36px;
+  position:relative;z-index:1;
+  animation:fadeUp .7s .45s var(--ease-out) both;
+}
+.hero-actions{
+  display:flex;align-items:flex-start;flex-direction:column;gap:10px;flex-wrap:wrap;
+  position:relative;z-index:1;
+  animation:fadeUp .7s .58s var(--ease-out) both;
+}
+.hero-featured{display:flex;flex-direction:column;gap:12px;}
+.hero-featured-label{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);}
+.hero-featured-logos{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.hero-featured-logos .ota-item img{height:18px;filter:grayscale(1);opacity:.5;transition:opacity .2s;}
+.hero-featured-logos .ota-item:hover img{opacity:.8;}
+.hero-stats-row{
+  display:flex;gap:0;margin-top:40px;padding-top:36px;
+  border-top:1px solid var(--border);
+  position:relative;z-index:1;
+  animation:fadeUp .6s .7s var(--ease-out) both;
+}
+.hsr-item{flex:1;padding-right:16px;}
+.hsr-item+.hsr-item{padding-left:16px;padding-right:0;border-left:1px solid var(--border);}
+.hsr-num{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:var(--text);letter-spacing:-.04em;line-height:1;}
+.hsr-lbl{font-size:.65rem;font-weight:500;color:var(--text3);letter-spacing:.05em;text-transform:uppercase;margin-top:4px;}
+
+/* Featured On OTA strip */
+.featured-on{background:#FAFAFA;border-top:1px solid var(--border);padding:28px 60px;}
+.featured-on-inner{max-width:900px;margin:0 auto;text-align:center;}
+.featured-on-label{font-size:.65rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);margin-bottom:18px;}
+.featured-on-logos{display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap;}
+.ota-item{display:flex;align-items:center;gap:8px;opacity:.55;transition:opacity .2s;cursor:default;}
+.ota-item:hover{opacity:.85;}
+.ota-item img{height:22px;width:auto;object-fit:contain;filter:grayscale(1);}
+
+/* Right panel — portrait video fills full column height */
+.hero-right-panel{
+  position:relative;z-index:2;
+  padding:24px 60px 24px 20px;
+  display:flex;align-items:stretch;
+  animation:fadeUp .8s .4s var(--ease-out) both;
+}
+.hero-video-box{
+  position:relative;border-radius:24px;overflow:hidden;
+  width:100%;
+  /* Let portrait video determine height naturally */
+  display:flex;align-items:stretch;
+  box-shadow:0 24px 80px rgba(124,58,237,.18),0 8px 32px rgba(0,0,0,.10);
+  border:1px solid rgba(124,58,237,.15);
+  min-height:440px;
+}
+.hero-video{
+  width:100%;height:100%;object-fit:cover;
+  display:block;flex:1;
+}
+.hero-video-box::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(124,58,237,.06) 0%,transparent 50%);
+  pointer-events:none;z-index:1;
+}
+/* Floating badges */
+.hero-video-badge{
+  position:absolute;bottom:20px;left:20px;z-index:3;
+  background:rgba(255,255,255,.93);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-radius:14px;padding:12px 16px;
+  box-shadow:0 4px 20px rgba(0,0,0,.12);
+  display:flex;align-items:center;gap:10px;
+}
+.hvb-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;
+  box-shadow:0 0 0 3px rgba(34,197,94,.2);flex-shrink:0;
+  animation:pulse 2s infinite;}
+.hvb-text{font-size:.78rem;font-weight:600;color:#0A0A0A;white-space:nowrap;}
+.hvb-sub{font-size:.65rem;color:#6B7280;margin-top:1px;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(34,197,94,.2)}50%{box-shadow:0 0 0 7px rgba(34,197,94,.08)}}
+.hero-score-badge{
+  position:absolute;top:20px;right:20px;z-index:3;
+  background:rgba(255,255,255,.93);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-radius:14px;padding:12px 16px;text-align:center;
+  box-shadow:0 4px 20px rgba(0,0,0,.12);
+}
+.hsb-num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--purple);line-height:1;}
+.hsb-stars{font-size:.75rem;color:var(--purple);letter-spacing:1px;margin:2px 0;}
+.hsb-lbl{font-size:.62rem;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:.05em;}
+
+/* Buttons */
+.btn-gold{
+  background:var(--purple);color:#fff;
+  padding:13px 28px;border-radius:var(--rpill);
+  font-size:.875rem;font-weight:600;letter-spacing:.01em;
+  transition:all .22s var(--ease-spring);display:inline-block;
+}
+.btn-gold:hover{background:var(--purple2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(124,58,237,.35)}
+.btn-outline{
+  background:transparent;color:var(--text);
+  padding:12px 28px;border-radius:var(--rpill);
+  border:1.5px solid var(--border);
+  font-size:.875rem;font-weight:500;
+  transition:all .22s;display:inline-block;
+}
+.btn-outline:hover{border-color:var(--purple);color:var(--purple);background:var(--purple-soft);}
+
+.hero-scroll{display:none;}
+.hero-overlay,.hero-grain,.hero-strip{display:none;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* ══════════════════════════════════
+   SHARED SECTION STYLES
+══════════════════════════════════ */
+section{padding:112px 60px;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.7rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--purple);margin-bottom:14px;
+}
+.eyebrow::before{content:'';width:20px;height:1px;background:var(--purple);}
+h2.sh{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.2rem,4vw,3.6rem);
+  font-weight:300;line-height:1.05;letter-spacing:-.02em;
+  color:var(--text);margin-bottom:16px;
+}
+h2.sh em{font-style:italic;color:var(--purple);}
+p.sb{font-size:1rem;line-height:1.8;color:var(--text2);max-width:520px;}
+
+/* REVEAL */
+[data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease-out),transform .8s var(--ease-out);}
+[data-reveal="left"]{transform:translateX(-28px);}
+[data-reveal="right"]{transform:translateX(28px);}
+[data-reveal].revealed{opacity:1;transform:none;}
+[data-delay="1"]{transition-delay:.08s}[data-delay="2"]{transition-delay:.16s}
+[data-delay="3"]{transition-delay:.24s}[data-delay="4"]{transition-delay:.32s}
+
+/* ══════════════════════════════════
+   DIRECTOR MESSAGE
+══════════════════════════════════ */
+.director{background:var(--off-white);padding:64px 60px;border-top:1px solid var(--border);}
+.director-inner{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;max-width:1200px;margin:0 auto;
+}
+.director-img-wrap{position:relative;}
+
+.director-img{
+  border-radius:var(--r16);overflow:hidden;
+  aspect-ratio:3/4;
+}
+.director-img img{
+  width:100%;height:100%;object-fit:cover;
+  filter:brightness(.88) saturate(.9);
+  transition:transform 6s ease,filter .5s;
+}
+.director-img:hover img{transform:scale(1.04);filter:brightness(.92) saturate(1)}
+/* Gold accent corner */
+.director-img::after{
+  content:'';position:absolute;bottom:-16px;right:-16px;
+  width:80px;height:80px;border-radius:var(--r8);
+  background:var(--bg3);border:1px solid var(--border2);
+  z-index:-1;
+}
+.director-badge{
+  position:absolute;bottom:24px;left:-28px;
+  background:#fff;border:1px solid var(--border);
+  border-radius:var(--r16);padding:18px 22px;
+  box-shadow:0 8px 32px rgba(0,0,0,.1);
+}
+.director-badge .name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--text);}
+.director-badge .role{font-size:.72rem;font-weight:500;color:var(--purple);letter-spacing:.06em;text-transform:uppercase;margin-top:2px;}
+.director-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.4rem,2.2vw,2rem);
+  font-weight:300;line-height:1.5;
+  color:var(--text);margin-bottom:28px;font-style:italic;
+}
+.director-quote::before{
+  content:'\201C';display:block;
+  font-size:5rem;line-height:.6;color:var(--gold);opacity:.35;
+  margin-bottom:12px;font-style:normal;
+}
+.director-text{font-size:.9375rem;line-height:1.85;color:var(--text2);margin-bottom:28px;}
+.director-sig{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem;font-weight:600;color:var(--text);font-style:italic;
+}
+.director-sig-role{font-size:.75rem;color:var(--text3);letter-spacing:.06em;text-transform:uppercase;margin-top:2px;}
+
+/* ══════════════════════════════════
+   ROOMS
+══════════════════════════════════ */
+.rooms{background:var(--white);padding:112px 60px;border-top:1px solid var(--border);}
+.rooms-header{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:56px;max-width:1200px;margin-left:auto;margin-right:auto;}
+.rooms-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:20px;max-width:1200px;margin:0 auto;
+}
+.room-card{
+  background:#fff;border-radius:var(--r16);
+  overflow:hidden;border:1px solid var(--border);
+  transition:border-color .3s,transform .3s var(--ease-spring),box-shadow .3s;
+  position:relative;
+}
+.room-card:hover{border-color:rgba(0,0,0,.15);transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.10);}
+.room-img{aspect-ratio:4/3;overflow:hidden;position:relative;}
+.room-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.8);transition:transform .6s var(--ease-out),filter .4s;}
+.room-card:hover .room-img img{transform:scale(1.06);filter:brightness(.9)}
+.room-tag{
+  position:absolute;top:16px;left:16px;
+  background:var(--purple);color:#fff;
+  font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:4px 12px;border-radius:var(--rpill);
+}
+.room-body{padding:28px 24px;}
+.room-body h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem;font-weight:400;color:var(--text);
+  margin-bottom:8px;letter-spacing:-.01em;
+}
+.room-body p{font-size:.875rem;line-height:1.7;color:#6B6560;margin-bottom:20px;}
+.room-features{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:22px;}
+.rf{
+  display:flex;align-items:center;gap:5px;
+  font-size:.75rem;font-weight:500;color:#9C9890;
+}
+.room-link{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.8125rem;font-weight:600;color:var(--purple);
+  transition:gap .2s;
+}
+.room-card:hover .room-link{gap:10px;}
+
+/* ══════════════════════════════════
+   ABOUT / WHY CHOOSE US
+══════════════════════════════════ */
+.about{background:var(--off-white);padding:112px 60px;border-top:1px solid var(--border);}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1200px;margin:0 auto;}
+.about-img-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.aig-main{grid-column:span 2;border-radius:var(--r16);overflow:hidden;aspect-ratio:16/9;}
+.aig-main img{width:100%;height:100%;object-fit:cover;filter:brightness(.85);transition:transform 6s ease;}
+.aig-main:hover img{transform:scale(1.04);}
+.aig-sub{border-radius:var(--r16);overflow:hidden;aspect-ratio:4/3;}
+.aig-sub img{width:100%;height:100%;object-fit:cover;filter:brightness(.8);transition:transform .5s;}
+.aig-sub:hover img{transform:scale(1.06);}
+.about-features{display:flex;flex-direction:column;gap:20px;margin-top:36px;}
+.af{
+  display:flex;gap:16px;padding:20px;
+  background:#fff;border-radius:var(--r16);
+  border:1px solid var(--border);
+  transition:border-color .25s,background .25s;
+}
+.af:hover{border-color:var(--border2);background:var(--bg3);}
+.af-icon{
+  width:44px;height:44px;border-radius:10px;
+  background:var(--purple-soft);border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;flex-shrink:0;
+}
+.af-body h4{font-size:.9375rem;font-weight:600;color:var(--text);margin-bottom:4px;}
+.af-body p{font-size:.8125rem;line-height:1.6;color:var(--text2);}
+
+/* ══════════════════════════════════
+   GALLERY
+══════════════════════════════════ */
+.gallery-sec{background:var(--off-white);padding:112px 60px;border-top:1px solid var(--border);}
+.gallery-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px;max-width:1200px;margin-left:auto;margin-right:auto;}
+.gallery-grid{
+  display:grid;grid-template-columns:repeat(12,1fr);
+  gap:10px;max-width:1200px;margin:0 auto;
+}
+.gi{border-radius:var(--r16);overflow:hidden;position:relative;}
+.gi img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.75);transition:filter .45s,transform .55s var(--ease-out);}
+.gi:hover img{filter:brightness(.95);transform:scale(1.04);}
+.gg1{grid-column:span 5;grid-row:span 2;min-height:480px;}
+.gg2{grid-column:span 7;min-height:232px;}
+.gg3{grid-column:span 4;min-height:240px;}
+.gg4{grid-column:span 3;min-height:240px;}
+.gi-cap{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(transparent,rgba(13,12,11,.8));}
+.gi-tag{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--purple);padding:3px 10px;border-radius:var(--rpill);margin-bottom:5px;}
+.gi-cap h4{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--cream);font-weight:400;}
+
+/* ══════════════════════════════════
+   SERVICES / QUICK LINKS
+══════════════════════════════════ */
+.services-bar{background:var(--bg3);padding:72px 60px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.sb-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;max-width:1200px;margin:0 auto;}
+.sbi{
+  padding:36px 28px;background:transparent;
+  border-right:1px solid var(--border);
+  transition:background .25s;text-align:center;
+}
+.sbi:last-child{border-right:none;}
+.sbi:hover{background:rgba(0,0,0,.04);}
+.sbi-icon{font-size:2rem;margin-bottom:14px;}
+.sbi h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--text);margin-bottom:8px;}
+.sbi p{font-size:.8125rem;line-height:1.6;color:var(--text2);}
+.sbi a{display:inline-flex;align-items:center;gap:5px;font-size:.78rem;font-weight:600;color:var(--purple);margin-top:14px;transition:gap .2s;}
+.sbi:hover a{gap:9px;}
+
+/* ══════════════════════════════════
+   VEHICLES & TRAVEL
+══════════════════════════════════ */
+.vehicles{background:var(--white);padding:112px 60px;border-top:1px solid var(--border);}
+.vehicles-inner{max-width:1200px;margin:0 auto;}
+.vehicles-header{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:48px;}
+.vehicle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.vc{
+  background:#fff;border-radius:var(--r16);
+  border:1px solid var(--border);padding:32px 26px;
+  transition:border-color .25s,transform .3s var(--ease-spring),box-shadow .3s;
+}
+.vc:hover{border-color:rgba(0,0,0,.12);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08);}
+.vc-icon{font-size:2.2rem;margin-bottom:16px;}
+.vc h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--text);margin-bottom:8px;}
+.vc p{font-size:.8125rem;line-height:1.65;color:var(--text2);margin-bottom:18px;}
+.vc a{font-size:.78rem;font-weight:600;color:var(--purple);display:inline-flex;align-items:center;gap:5px;transition:gap .2s;}
+.vc:hover a{gap:9px;}
+
+/* ══════════════════════════════════
+   CONTACT
+══════════════════════════════════ */
+.contact{background:var(--white);padding:112px 60px;border-top:1px solid var(--border);}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;max-width:1200px;margin:0 auto;}
+.contact-img-wrap{border-radius:var(--r16);overflow:hidden;box-shadow:var(--sh);}
+.contact-img-wrap img{width:100%;height:auto;display:block;object-fit:contain;}
+.contact-details{display:flex;flex-direction:column;gap:20px;margin-top:36px;}
+.cd{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:16px 18px;background:#fff;
+  border-radius:var(--r16);border:1px solid var(--border);
+  transition:border-color .22s,box-shadow .22s;
+}
+.cd:hover{border-color:rgba(0,0,0,.12);box-shadow:0 4px 16px rgba(0,0,0,.06);}
+.cd-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:var(--purple-soft);border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;flex-shrink:0;
+}
+.cd-body .label{font-size:.68rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#9CA3AF;margin-bottom:3px;}
+.cd-body .value{font-size:.9rem;color:#0A0A0A;font-weight:500;}
+.cd-body .value a{color:#0A0A0A;transition:color .18s;}
+.cd-body .value a:hover{color:var(--purple);}
+
+/* Map embed */
+.map-wrap{border-radius:var(--r16);overflow:hidden;margin-top:28px;border:1px solid var(--border);}
+.map-wrap iframe{width:100%;height:260px;border:0;filter:grayscale(.5);}
+
+/* ══════════════════════════════════
+   CTA BANNER
+══════════════════════════════════ */
+.cta-banner{
+  background:linear-gradient(135deg,var(--purple) 0%,#5B21B6 100%);padding:88px 60px;
+  border-top:1px solid var(--border);
+  position:relative;overflow:hidden;
+}
+.cta-banner::before{
+  content:'';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:600px;height:300px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(201,168,76,.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cta-banner-inner{max-width:700px;margin:0 auto;text-align:center;position:relative;z-index:1;}
+.cta-banner h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.4rem,5vw,4rem);
+  font-weight:300;line-height:1.1;color:var(--cream);
+  margin-bottom:16px;
+}
+.cta-banner h2 em{font-style:italic;color:var(--gold);}
+.cta-banner p{font-size:1rem;color:rgba(245,240,230,.6);margin-bottom:32px;line-height:1.7;}
+
+/* ══════════════════════════════════
+   FOOTER
+══════════════════════════════════ */
+footer{background:var(--bg3);padding:72px 60px 36px;border-top:1px solid var(--border);}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:52px;margin-bottom:56px;max-width:1200px;margin-left:auto;margin-right:auto;}
+.fb-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.fb-logo img{height:36px;border-radius:4px;}
+.fb-logo span{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--cream);}
+.fb p{font-size:.8125rem;color:var(--text2);line-height:1.8;max-width:240px;margin-bottom:22px;}
+.fb-social{display:flex;gap:8px;}
+.fb-social a{
+  width:36px;height:36px;border-radius:var(--r8);
+  background:#fff;border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.8rem;color:var(--text2);transition:all .18s;
+}
+.fb-social a:hover{background:var(--purple);border-color:var(--purple);color:#fff;}
+.fc h4{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:18px;}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.fc ul li a{font-size:.8125rem;color:var(--text2);transition:color .18s;}
+.fc ul li a:hover{color:var(--purple);}
+.fc ul li{font-size:.8125rem;color:var(--text2);}
+.fbot{
+  border-top:1px solid var(--border);padding-top:24px;
+  display:flex;justify-content:space-between;align-items:center;
+  max-width:1200px;margin:0 auto;
+}
+.fbot p{font-size:.75rem;color:var(--text3);}
+.fbot a{color:var(--gold);transition:color .18s;}
+.fbot a:hover{color:var(--gold2);}
+
+/* ══════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════ */
+@media(max-width:1024px){
+  nav,section,.director,.about,.gallery-sec,.vehicles,.contact,footer,.featured-on{padding-left:28px;padding-right:28px;}
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-left-panel{padding:100px 28px 48px;}
+  .hero-right-panel{padding:0 28px 60px;order:2;}
+  .hero-video-box{aspect-ratio:16/9;min-height:auto;}
+  .director-inner,.about-inner,.contact-inner{grid-template-columns:1fr;gap:40px;}
+  .rooms-grid,.vehicle-grid{grid-template-columns:1fr 1fr;}
+  .gallery-grid{grid-template-columns:1fr 1fr;}
+  .gg1,.gg2,.gg3,.gg4{grid-column:span 1;grid-row:span 1;min-height:200px;}
+  .ft{grid-template-columns:1fr 1fr;gap:32px;}
+  .nav-links{display:none;}
+  .director-badge{left:16px;}
+  .hero-stats-row{gap:16px;}
+  .nav-wa span{display:none;}
+  .nav-wa{padding:10px 14px;}
+  .featured-on-logos{gap:24px;}
+}
+@media(max-width:768px){
+  nav{padding:12px 20px;}
+  nav.solid{padding:10px 20px;}
+  .nav-logo img{height:40px;}
+  .nav-logo-text span:first-child{font-size:1.3rem;}
+  .nav-logo-text span:last-child{display:none;}
+  .nav-cta{padding:9px 18px;font-size:.8rem;}
+  .nav-wa{padding:9px 12px;}
+  section,.director,.about,.gallery-sec,.vehicles,.contact,footer{padding-left:20px;padding-right:20px;padding-top:72px;padding-bottom:72px;}
+  .hero-left-panel{padding:88px 20px 40px;}
+  .hero-right-panel{padding:0 20px 48px;}
+  .hero h1{font-size:clamp(2.2rem,8vw,3.2rem);}
+  .hero-stats-row{flex-wrap:wrap;gap:0;}
+  .hsr-item{flex:1 1 calc(50% - 1px);padding:14px 12px;}
+  .hsr-item+.hsr-item{border-left:none;}
+  .hsr-item:nth-child(odd){border-right:1px solid var(--border);}
+  .hsr-item:nth-child(1),.hsr-item:nth-child(2){border-bottom:1px solid var(--border);}
+  .rooms-grid,.vehicle-grid{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:1fr;}
+  .gg1,.gg2,.gg3,.gg4{min-height:180px;}
+  .ft{grid-template-columns:1fr;}
+  .fbot{flex-direction:column;gap:12px;text-align:center;}
+  .rooms-header,.vehicles-header{flex-direction:column;align-items:flex-start;gap:20px;}
+  .featured-on{padding:24px 20px;}
+  .featured-on-logos{gap:20px;}
+  .ota-item img{height:18px;}
+  .director-badge{left:12px;bottom:16px;padding:12px 16px;}
+  .hero-video-box{border-radius:16px;}
+  h2.sh{font-size:clamp(1.9rem,6vw,2.8rem);}
+}
+@media(max-width:480px){
+  .nav-logo-text span:first-child{font-size:1.15rem;}
+  .hero h1{font-size:2rem;}
+  .hero-sub{font-size:.9rem;}
+  .btn-gold,.btn-outline{padding:11px 22px;font-size:.82rem;}
+  .hsr-num{font-size:1.4rem;}
+  .hsr-lbl{font-size:.6rem;}
+  .featured-on-logos{gap:14px;}
+  .ota-item img{height:16px;}
+  .contact-inner{gap:28px;}
+  .ft{gap:28px;}
+}
+
+/* PREMIUM ENHANCEMENTS */
+body{background:linear-gradient(to bottom,#ffffff,#faf7ff);} .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at top right, rgba(124,58,237,.08), transparent 35%);pointer-events:none;} .nav-cta{box-shadow:0 10px 30px rgba(124,58,237,.25);} .card,.room-card,.feature-card,.gallery-item{transition:all .35s cubic-bezier(.16,1,.3,1);} .card:hover,.room-card:hover,.feature-card:hover,.gallery-item:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(0,0,0,.12);} img{transition:transform .7s ease;} .room-card:hover img,.gallery-item:hover img{transform:scale(1.04);} .floating-book-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:22px;z-index:999;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-radius:22px;padding:14px 18px;display:flex;align-items:center;gap:18px;box-shadow:0 20px 50px rgba(0,0,0,.16);} .floating-book-bar a{background:#7C3AED;color:#fff;padding:12px 22px;border-radius:999px;font-weight:600;} .whatsapp-float{position:fixed;right:24px;bottom:100px;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px;text-decoration:none;box-shadow:0 14px 40px rgba(37,211,102,.35);z-index:999;}
+
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <img src="hotel-pun-inn-logo.jpg" alt="Hotel Pun Inn Logo"/>
+    <div class="nav-logo-text">
+      <span>Hotel Pun Inn</span>
+      <span>Bhotebahal · Kathmandu</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#rooms">Rooms</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#vehicles">Vehicles &amp; Travel</a></li>
+    <li><a href="#contact" class="nav-contact-pill">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="https://wa.me/9779866557399" class="nav-wa" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO — Option 3: Split layout ══ -->
+<section class="hero" id="home">
+
+  <!-- LEFT: White panel, dark text, fully readable -->
+  <div class="hero-left-panel">
+    <h1>Stay close to Kathmandu's<br><em>heritage, culture,</em><br>and vibrant city life</h1>
+    <p class="hero-sub">Where ancient Nepali hospitality meets modern comfort. Hotel Pun Inn — a peaceful sanctuary in the vibrant heart of Kathmandu.</p>
+    <div class="hero-actions">
+      <div class="hero-featured">
+        <div class="hero-featured-label">Featured On</div>
+        <div class="hero-featured-logos">
+          <div class="ota-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Booking.com_logo.svg/320px-Booking.com_logo.svg.png" alt="Booking.com"/>
+          </div>
+          <div class="ota-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Agoda_transparent_logo.svg/320px-Agoda_transparent_logo.svg.png" alt="Agoda"/>
+          </div>
+          <div class="ota-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/MakeMyTrip_Logo.svg/320px-MakeMyTrip_Logo.svg.png" alt="MakeMyTrip"/>
+          </div>
+          <div class="ota-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Expedia_logo.svg/320px-Expedia_logo.svg.png" alt="Expedia"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats-row">
+      <div class="hsr-item">
+        <div class="hsr-num">3</div>
+        <div class="hsr-lbl">Room Types</div>
+      </div>
+      <div class="hsr-item">
+        <div class="hsr-num">24/7</div>
+        <div class="hsr-lbl">Service</div>
+      </div>
+      <div class="hsr-item">
+        <div class="hsr-num"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-bottom:2px"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg></div>
+        <div class="hsr-lbl">Free WiFi</div>
+      </div>
+      <div class="hsr-item">
+        <div class="hsr-num">✈️</div>
+        <div class="hsr-lbl">Airport Pickup</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Video in contained rounded box -->
+  <div class="hero-right-panel">
+    <div class="hero-video-box">
+      <video class="hero-video" autoplay muted loop playsinline poster="hotel-pun-inn-logo.jpg">
+        <source src="hotel-pun-inn-video.mp4" type="video/mp4"/>
+        <source src="hotel-pun-inn-video.mov" type="video/quicktime"/>
+      </video>
+      <!-- Live badge -->
+      <div class="hero-video-badge">
+        <div>
+          <div class="hvb-dot"></div>
+        </div>
+        <div>
+          <div class="hvb-text">Now Welcoming Guests</div>
+          <div class="hvb-sub">Bhotebahal, Kathmandu</div>
+        </div>
+      </div>
+      <!-- Score badge -->
+      <div class="hero-score-badge">
+        <div class="hsb-num">4.8</div>
+        <div class="hsb-stars">★★★★★</div>
+        <div class="hsb-lbl">Guest Score</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══ DIRECTOR MESSAGE ══ -->
+<section class="director" id="director">
+  <div class="director-inner">
+    <!-- Left: Photo -->
+    <div class="director-img-wrap" data-reveal="left">
+      <div class="director-img">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=85" alt="Ramu Pun — Managing Director"/>
+      </div>
+      <div class="director-badge">
+        <div class="name">Ramu Pun</div>
+        <div class="role">Managing Director</div>
+      </div>
+    </div>
+    <!-- Right: Message -->
+    <div data-reveal="right">
+      <div class="eyebrow">Welcome Message</div>
+      <h2 class="sh">A warm <em>Namaste</em><br>from our family<br>to yours.</h2>
+      <div class="director-quote">
+        "We built Hotel Pun Inn as more than a hotel — we built it as a home where every guest is treated as family."
+      </div>
+      <p class="director-text">
+        Namaste and a heartfelt welcome to Hotel Pun Inn. Nestled in the historic neighborhood of Bhotebahal, Kathmandu, our hotel was born from a simple yet profound vision: to offer every traveller a sanctuary where they feel truly at home.
+        <br><br>
+        Guided by the timeless Nepali principle of <em>Atithi Devo Bhava</em> — "The Guest is God" — my team and I are dedicated to ensuring that your time with us is seamless, memorable, and deeply personal. Whether you are here to explore the wonders of the Kathmandu Valley or to conduct business in Nepal's capital, we are committed to making every moment of your stay extraordinary.
+        <br><br>
+        We look forward to welcoming you personally, and to sharing the warmth, culture, and spirit of our beautiful Nepal with you.
+      </p>
+      <div class="director-sig">Ramu Pun</div>
+      <div class="director-sig-role">Managing Director — Hotel Pun Inn, Kathmandu</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ROOMS ══ -->
+<section class="rooms" id="rooms">
+  <div class="rooms-header" data-reveal>
+    <div>
+      <div class="eyebrow">Accommodation</div>
+      <h2 class="sh">Rest well in our<br><em>thoughtfully designed</em> rooms.</h2>
+    </div>
+    <a href="#contact" class="btn-gold" style="flex-shrink:0">Book a Room</a>
+  </div>
+  <div class="rooms-grid">
+    <!-- Classic -->
+    <div class="room-card" data-reveal data-delay="1">
+      <div class="room-img">
+        <span class="room-tag">Classic</span>
+        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80" alt="Classic Non-AC Room"/>
+      </div>
+      <div class="room-body">
+        <h3>Classic Room</h3>
+        <p>Comfortable and well-appointed Non-AC rooms offering a peaceful retreat in the heart of Kathmandu. Perfect for budget-conscious travellers who don't compromise on comfort.</p>
+        <div class="room-features">
+          <span class="rf">🛏️ Single / Double</span>
+          <span class="rf">🪟 City View</span>
+          <span class="rf">📶 Free WiFi</span>
+          <span class="rf">🚿 En-suite Bath</span>
+        </div>
+        <a href="#contact" class="room-link">Enquire Now →</a>
+      </div>
+    </div>
+    <!-- Deluxe -->
+    <div class="room-card" data-reveal data-delay="2">
+      <div class="room-img">
+        <span class="room-tag">Deluxe</span>
+        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&q=80" alt="Deluxe AC Room"/>
+      </div>
+      <div class="room-body">
+        <h3>Deluxe Room</h3>
+        <p>Our signature AC rooms offer superior comfort with modern amenities. Climate-controlled for year-round comfort, ideal for both business and leisure travellers.</p>
+        <div class="room-features">
+          <span class="rf">❄️ Air Conditioned</span>
+          <span class="rf">📺 Smart TV</span>
+          <span class="rf">📶 Free WiFi</span>
+          <span class="rf">☕ Tea / Coffee</span>
+        </div>
+        <a href="#contact" class="room-link">Enquire Now →</a>
+      </div>
+    </div>
+    <!-- Suite -->
+    <div class="room-card" data-reveal data-delay="3">
+      <div class="room-img">
+        <span class="room-tag" style="background:#c9a84c">Suite</span>
+        <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?w=800&q=80" alt="Suite Family Room"/>
+      </div>
+      <div class="room-body">
+        <h3>Suite Room</h3>
+        <p>Spacious family suites designed for groups and families travelling together. Generous living space, premium furnishings, and all the comforts of home in Kathmandu's heritage heart.</p>
+        <div class="room-features">
+          <span class="rf">👨‍👩‍👧 Family / Group</span>
+          <span class="rf">🛋️ Sitting Area</span>
+          <span class="rf">❄️ AC + Heater</span>
+          <span class="rf">🍽️ Room Service</span>
+        </div>
+        <a href="#contact" class="room-link">Enquire Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-img-grid" data-reveal="left">
+      <div class="aig-main">
+        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=900&q=80" alt="Hotel Pun Inn Exterior"/>
+      </div>
+      <div class="aig-sub">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80" alt="Hotel lobby"/>
+      </div>
+      <div class="aig-sub">
+        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80" alt="Hotel facilities"/>
+      </div>
+    </div>
+    <div data-reveal="right">
+      <div class="eyebrow">About Hotel Pun Inn</div>
+      <h2 class="sh">A haven of <em>warmth</em><br>in historic Bhotebahal.</h2>
+      <p class="sb" style="margin-bottom:32px">Located in the culturally rich neighbourhood of Bhotebahal, Hotel Pun Inn stands as a symbol of authentic Nepali hospitality. We are more than a hotel — we are your gateway to the soul of Kathmandu.</p>
+      <div class="about-features">
+        <div class="af">
+          <div class="af-icon">🙏</div>
+          <div class="af-body">
+            <h4>Atithi Devo Bhava</h4>
+            <p>Every guest is welcomed as a member of our family, guided by Nepal's timeless principle that "The Guest is God."</p>
+          </div>
+        </div>
+        <div class="af">
+          <div class="af-icon">📍</div>
+          <div class="af-body">
+            <h4>Unbeatable Location</h4>
+            <p>Situated in Bhotebahal — walking distance from Thamel, Durbar Square, Swayambhunath and the city's key business districts.</p>
+          </div>
+        </div>
+        <div class="af">
+          <div class="af-icon">✨</div>
+          <div class="af-body">
+            <h4>Modern Comfort, Traditional Spirit</h4>
+            <p>Clean, well-maintained rooms with contemporary amenities wrapped in the genuine warmth of Nepali hospitality.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GALLERY ══ -->
+<section class="gallery-sec" id="gallery">
+  <div class="gallery-header" data-reveal>
+    <div>
+      <div class="eyebrow">Gallery</div>
+      <h2 class="sh">A glimpse into your<br><em>Kathmandu stay.</em></h2>
+    </div>
+    <a href="https://hotelpuninnkathmandu.com.np/gallery/" target="_blank" class="btn-outline">View More Photos →</a>
+  </div>
+  <div class="gallery-grid">
+    <div class="gi gg1" data-reveal="left">
+      <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80" alt="Hotel Pun Inn"/>
+      <div class="gi-cap"><span class="gi-tag">Hotel</span><h4>Hotel Pun Inn, Bhotebahal</h4></div>
+    </div>
+    <div class="gi gg2" data-reveal>
+      <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=900&q=80" alt="Deluxe Room"/>
+      <div class="gi-cap"><span class="gi-tag">Rooms</span><h4>Deluxe AC Rooms</h4></div>
+    </div>
+    <div class="gi gg3" data-reveal data-delay="1">
+      <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&q=80" alt="Classic Room"/>
+      <div class="gi-cap"><span class="gi-tag">Rooms</span><h4>Classic Non-AC Rooms</h4></div>
+    </div>
+    <div class="gi gg4" data-reveal data-delay="2">
+      <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=700&q=80" alt="Kathmandu"/>
+      <div class="gi-cap"><span class="gi-tag">Location</span><h4>Bhotebahal, Kathmandu</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VEHICLES & TRAVEL ══ -->
+<section class="vehicles" id="vehicles">
+  <div class="vehicles-inner">
+    <div class="vehicles-header" data-reveal>
+      <div>
+        <div class="eyebrow">Travel Services</div>
+        <h2 class="sh">Vehicles &amp; <em>Travel Packages</em></h2>
+      </div>
+      <p class="sb" style="max-width:360px">Explore Nepal with comfort and confidence. Our curated travel services take you beyond Kathmandu.</p>
+    </div>
+    <div class="vehicle-grid">
+      <div class="vc" data-reveal data-delay="1">
+        <div class="vc-icon">🚌</div>
+        <h3>Airport Transfers</h3>
+        <p>Reliable, punctual pickup and drop-off service between Tribhuvan International Airport and the hotel. Available 24/7 for all arrivals and departures.</p>
+        <a href="#contact">Book Transfer →</a>
+      </div>
+      <div class="vc" data-reveal data-delay="2">
+        <div class="vc-icon">🏔️</div>
+        <h3>Day Tours & Excursions</h3>
+        <p>Guided day trips to Pashupatinath, Boudhanath, Swayambhunath, Bhaktapur Durbar Square and Patan — the heart of the Kathmandu Valley.</p>
+        <a href="#contact">Plan a Tour →</a>
+      </div>
+      <div class="vc" data-reveal data-delay="3">
+        <div class="vc-icon">🗺️</div>
+        <h3>Nepal Travel Packages</h3>
+        <p>Custom multi-day itineraries to Pokhara, Chitwan, Everest Base Camp trekking routes and beyond. We handle logistics so you can explore freely.</p>
+        <a href="#contact">Enquire Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <!-- Business card image -->
+    <div data-reveal="left">
+      <div class="eyebrow">Get in Touch</div>
+      <h2 class="sh" style="margin-bottom:28px">We'd love to<br><em>hear from you.</em></h2>
+      <div class="contact-img-wrap">
+        <img src="hotel-pun-inn-contact.jpg" alt="Hotel Pun Inn Contact Details — Ramu Pun"/>
+      </div>
+    </div>
+    <!-- Contact details -->
+    <div data-reveal="right">
+      <p class="sb" style="margin-bottom:28px">Reach out to us directly for room bookings, travel packages, or any enquiries. Our team is available to assist you every day.</p>
+      <div class="contact-details">
+        <div class="cd">
+          <div class="cd-icon">📍</div>
+          <div class="cd-body">
+            <div class="label">Address</div>
+            <div class="value">Bhotebahal, Kathmandu, Nepal</div>
+          </div>
+        </div>
+        <div class="cd">
+          <div class="cd-icon">📞</div>
+          <div class="cd-body">
+            <div class="label">Reception</div>
+            <div class="value">
+              <a href="tel:+97715320666">+977-1-5320666</a> &nbsp;/&nbsp;
+              <a href="tel:+9779761424220">+977 9761424220</a>
+            </div>
+          </div>
+        </div>
+        <div class="cd">
+          <div class="cd-icon">👤</div>
+          <div class="cd-body">
+            <div class="label">Managing Director</div>
+            <div class="value"><a href="tel:+9779866557399">Ramu Pun — +977 9866557399</a></div>
+          </div>
+        </div>
+        <div class="cd">
+          <div class="cd-icon">✉️</div>
+          <div class="cd-body">
+            <div class="label">Email</div>
+            <div class="value">
+              <a href="mailto:info@hotelpunin.com.np">info@hotelpunin.com.np</a><br/>
+              <a href="mailto:hotelpuninn@gmail.com">hotelpuninn@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="cd">
+          <div class="cd-icon">📘</div>
+          <div class="cd-body">
+            <div class="label">Facebook</div>
+            <div class="value"><a href="https://www.facebook.com/profile.php?id=61579533207120" target="_blank">Hotel Pun Inn Kathmandu</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.4869539166387!2d85.30!3d27.71!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDQyJzM2LjAiTiA4NcKwMTgnMDAuMCJF!5e0!3m2!1sen!2snp!4v1620000000000!5m2!1sen!2snp"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Hotel Pun Inn Location">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="ft">
+    <div class="fb">
+      <div class="fb-logo">
+        <img src="hotel-pun-inn-logo.jpg" alt="Hotel Pun Inn"/>
+        <span>Hotel Pun Inn</span>
+      </div>
+      <p>A peaceful sanctuary in historic Bhotebahal, Kathmandu — where traditional Nepali warmth meets modern comfort. Under the direction of Ramu Pun.</p>
+      <div class="fb-social">
+        <a href="https://www.facebook.com/profile.php?id=61579533207120" target="_blank" aria-label="Facebook">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://wa.me/9779866557399" target="_blank" aria-label="WhatsApp">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        </a>
+        <a href="mailto:hotelpuninn@gmail.com" aria-label="Email">✉</a>
+      </div>
+    </div>
+    <div class="fc">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#vehicles">Vehicles &amp; Travel</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Room Types</h4>
+      <ul>
+        <li><a href="#rooms">Classic (Non-AC) Rooms</a></li>
+        <li><a href="#rooms">Deluxe (AC) Rooms</a></li>
+        <li><a href="#rooms">Suite (Family) Rooms</a></li>
+      </ul>
+      <h4 style="margin-top:22px">Legal</h4>
+      <ul>
+        <li><a href="https://hotelpuninnkathmandu.com.np/privacy-and-policy/" target="_blank">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Contact</h4>
+      <ul>
+        <li>Bhotebahal, Kathmandu, Nepal</li>
+        <li><a href="tel:+97715320666">+977-1-5320666</a></li>
+        <li><a href="tel:+9779866557399">+977 9866557399</a></li>
+        <li><a href="mailto:info@hotelpunin.com.np">info@hotelpunin.com.np</a></li>
+        <li><a href="https://maps.app.goo.gl/eyt7xAaoQAeqoDbK9" target="_blank">Find us on Google Maps</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <p>© 2026 Hotel Pun Inn Kathmandu Pvt. Ltd. All rights reserved.</p>
+    <p>Bhotebahal, Kathmandu, Nepal 🇳🇵</p>
+  </div>
+</footer>
+
+<script>
+/* Mobile menu toggle */
+function toggleMenu(){
+  document.getElementById('nav').classList.toggle('nav-mobile-open');
+}
+document.querySelectorAll('.nav-links a').forEach(a=>{
+  a.addEventListener('click',()=>document.getElementById('nav').classList.remove('nav-mobile-open'));
+});
+
+/* Sticky nav */
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>60),{passive:true});
+
+/* Scroll reveal */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');obs.unobserve(e.target);}});
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('[data-reveal]').forEach(el=>obs.observe(el));
+
+/* Smooth hover tilt on room cards */
+document.querySelectorAll('.room-card,.vc,.af').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=((e.clientX-r.left)/r.width-.5)*5;
+    const y=((e.clientY-r.top)/r.height-.5)*3;
+    card.style.transform=`perspective(600px) rotateX(${-y}deg) rotateY(${x}deg) translateY(-4px)`;
+  });
+  card.addEventListener('mouseleave',()=>card.style.transform='');
+});
+
+/* Video fallback — if video fails to load show poster image */
+const vid=document.querySelector('.hero-video');
+if(vid){
+  vid.addEventListener('error',()=>{
+    vid.style.display='none';
+    document.querySelector('.hero').style.background='linear-gradient(135deg,#1e1c19 0%,#0d0c0b 100%)';
+  });
+}
+</script>
+
+<div class="floating-book-bar"><div><small>Direct Booking</small><strong> Best Rates Guaranteed</strong></div><a href="#contact">Book Your Stay</a></div><a class="whatsapp-float" href="https://wa.me/" target="_blank">✆</a>
+
+</body>
+</html>
